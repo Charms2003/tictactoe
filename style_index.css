@@ -1,6 +1,8 @@
+@font-face {
+    font-family: 'Excelsior Comics Expanded';
+    src: url('https://raw.githubusercontent.com/Charms2003/tictactoe/main/excelsiorcomicsexpand.ttf') format('truetype');
+}
 
-/* Existing CSS code */
-/* Default color for the radio button */
 input[type="radio"] {
     appearance: none;
     -webkit-appearance: none;
@@ -63,14 +65,14 @@ body {
     min-height: 100vh;
     justify-content: space-between;
     position: relative;
-    font-family: 'Excelsior Comics Expanded';
+    font-family: 'Excelsior Comics Expanded', sans-serif;
 }
 
 
 h1 {
     color: white;
     font-weight: bold;
-    font-family: 'Excelsior Comics Expanded';
+    font-family: 'Excelsior Comics Expanded', sans-serif;
     font-size: 6em;
     margin-top: 90px;
     margin-bottom: 20px; /* Adjust the value to move it upwards */
