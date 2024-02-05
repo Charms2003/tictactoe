@@ -1,7 +1,12 @@
+@font-face {
+    font-family: 'Excelsior Comics Expanded';
+    src: url('https://raw.githubusercontent.com/Charms2003/tictactoe/main/excelsiorcomicsexpand.ttf') format('truetype');
+}
+
 /* css for general website layout */
 * {
     color: white;
-    font-family: 'Excelsior Comics Expanded';
+    font-family: 'Excelsior Comics Expanded', sans-serif;
 }
 
 body,
@@ -55,7 +60,7 @@ p {
 }
 
 .display-3 {
-    font-family: 'Excelsior Comics Expanded';
+    font-family: 'Excelsior Comics Expanded', sans-serif;
     font-weight: bolder;
     color: rgb(33, 37, 41);
 }
