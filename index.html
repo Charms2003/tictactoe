@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style_index.css">
+    <style>
+        .difficulty-options {
+            display: none;
+        }
+    </style>
+
+    <title>TicTacToe</title>
+</head>
+
+<body>
+
+    <div id="custom-container">
+        <div id="cross">
+            <h1>CROSSED</h1>
+        </div>
+
+        <p id="who">Who would you like to play against?</p>
+
+        <div id="playerOptions">
+            <label id="aiLabel">
+                <input type="radio" name="playerType" value="ai" onclick="toggleDifficultyOptions()"> AI
+            </label>
+            <label id="humanLabel">
+                <input type="radio" name="playerType" value="human"> Human
+            </label>
+        </div>
+
+
+        <div class="difficulty-options">
+            <p id="select">Select AI Difficulty:</p>
+            <div id="difficulty">
+                <label>
+                    <input type="radio" name="aiDifficulty" value="easy" checked> Easy
+                </label>
+                <label>
+                    <input type="radio" name="aiDifficulty" value="difficult"> Difficult
+                </label>
+                <label>
+                    <input type="radio" name="aiDifficulty" value="expert"> Expert
+                </label>
+            </div>
+        </div>
+
+        <button id="startButton" onclick="redirect()">Start</button>
+
+    </div>
+
+    <div id="background"></div>
+
+    <script>
+        function toggleDifficultyOptions() {
+            const difficultyOptions = document.querySelector('.difficulty-options');
+            const aiRadioButton = document.querySelector('input[name="playerType"][value="ai"]');
+            const humanRadioButton = document.querySelector('input[name="playerType"][value="human"]');
+
+            if (aiRadioButton.checked) {
+                difficultyOptions.style.display = 'block';
+            } else if (humanRadioButton.checked) {
+                difficultyOptions.style.display = 'none';
+            }
+        }
+
+        const aiRadioButton = document.querySelector('input[name="playerType"][value="ai"]');
+        const humanRadioButton = document.querySelector('input[name="playerType"][value="human"]');
+        aiRadioButton.addEventListener('change', toggleDifficultyOptions);
+        humanRadioButton.addEventListener('change', toggleDifficultyOptions);
+
+        function redirect() {
+            var selectedDifficulty = document.querySelector('input[name="aiDifficulty"]:checked').value;
+            var humanMode = document.querySelector('input[name="playerType"]:checked').value;
+
+            if (humanMode === "human") {
+                window.location.href = "vshuman.html";
+            } else if (selectedDifficulty === "difficult") {
+                window.location.href = "difficult.html";
+            } else if (selectedDifficulty === "expert") {
+                window.location.href = "expert.html";
+            } else if (selectedDifficulty === "easy") {
+                window.location.href = "easy.html";
+            }
+        }
+
+    </script>
+
+    <footer class="p-2 bg-dark text-white text-center position-fixed bottom-0 w-100">
+        <div class="container">
+            <p class="lead">WEBPROG IT225<br>&copy; Group 2 - Bernardo, Briones, Cada&ntildea, Ferrer</p>
+        </div>
+    </footer>
+</body>
+
+</html>
